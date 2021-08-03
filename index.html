@@ -1,561 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taleru</title>
-    <style>
-        
-        html {
-  scroll-behavior: smooth;
-}
-        
-        body{
-            
-        margin: 2px;
-            font-size: 20px;
-        }
-        @media screen and (orientation:landscape){
-        
-        
-        header{
-        font-size: 70px;
-        }
-        @media screen and (max-width:1300px) {
-          header{
-        font-size: 55px;
-        }}
-        .mreviews{
-          width:60%;
-          height: 600px;;
-        }
-        #shownav{
-          display: none;
-        }
-        ul{
-            list-style-type: none;
-            display: inline-flex;
-        } 
-        #navg{
-            background-color: rgb(27, 27, 27);
-            padding: 20px;
-            
-            text-align: right;
-            position: sticky;
-            top: 0px;
-            padding-right: 40px;
-            z-index: 99;
-            
-            }
-            
-        }
-        @media screen and (orientation:portrait){
-        header{
-        font-size: 30px;    
-        
-        }
-        .mreviews{
-          width:90%;
-          height: 550px;
-        }
-        #navg{
-          /* display: block; */
-          position: fixed;
-          top:10px;
-          left:10px;
-          width: 50px;
-          height: 50px;
-          background-color: rgb(27, 27, 27);
-          text-align: left;
-          border-radius: 25px;
-          animation-name: expand;
-          animation-play-state: paused;
-          
-          overflow: hidden;
-          animation-duration: 0.2s;
-          z-index: 99;
-        }
-        @keyframes expand {
-          from{
-            width: 50px;
-            height:50px;
-          }
-          /* 50%{
-            width:350px;
-            
-          } */
-          to{
-            width:200px;
-            height: 300px;
-          }
-        }
-        @keyframes contract {
-          from{
-            width:200px;
-            height: 300px;
-            
-          }
-          /* 50%{
-            width:350px;
-            
-          } */
-          to{
-            width: 50px;
-            height:50px;
-          }
-        }
-        #navg ul li a{
-          display: inline-block;
-          flex-direction: row-reverse;
-          
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" id="favicon" href="favicon.ico" type="image/x-icon">
+  <title>Taleru</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-        }
-        ul{
-            list-style-type: none;
-            display: none;
-        } 
-        #shownav{
-          display: unset;
-          
-          width:50px;    
-        height: 50px ; 
-      position: fixed;
-      top:0px;
-    left:0px;  
-         }
+<body>
+  <header id="up">
+    <!-- <img src="tfg.png" width="100%" alt="" srcset=""> -->
+    <h1>Taleru Boating Point
+    </h1>
+  </header>
 
-          
-        }
-            
-        
-        header{
-            
-            padding: 20px;
-            text-align: center;
-            /* background-color: rgb(240, 224, 214); */
-            
-            
-            outline-width: 1rem;
-            /* font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
-            outline-color: seashell;
-            text-shadow: 2px 5px 2px rgb(27, 27, 27) ;
-            background-image: url("tfg.jpg");
-        }
-        h1{
-            text-align: center;
-        }
-        
-          
-        #navg a{
-            text-decoration: none;
-            background-color: rgba(250, 253, 250, 0);
-            color:honeydew;
-            padding:10px;
-            border-radius: 19px;
-        }
-        #navg ul a:hover{
-            background-color: black
-        }
-        div{
-            padding: 15px;
-        }
-        #upu{
-            text-align: right;
-            bottom: 10px;
-            right:10px;
-            width: 50px;
-            height: 50px;
-            display: inline-block;
-            /* overflow: hidden; */
-            /* clip-path: circle(49.3% at 50% 50%); */
-            /* border-color: rgb(132, 252, 132)     ; */
-            position: fixed;
-            z-index: 99;
-
-        }    
-        
-        .home{
-            font-size: larger;
-            padding: 50px;
-            border-width: 5px;
-            border-color: #000000;
-            margin: 10px;
-            
-        }    
-        
-        img{
-            border-radius: 25px;
-            width:100%;
-            height:100%;
-            background-color:rgba(80, 14, 80, 0.397);
-        }
-        header img{
-            text-decoration: none;
-        }
-        .homevideo{
-            align-self: center;
-            display: flex;
-        }
-        .slideshow-container {
-  width: 90%;
-  height: 20%;
-  /* position: absolute; */
-  margin: auto;
+  <nav id="navg">
+    <a id="shownav" onclick="show()" style="font-size: 35px; text-align: center;"><a id="shownav" onclick="show()" style="font-size: 35px; text-align:center;"><img class="navcnd" src="expand.png" "><img class="navcnd" " src="./Taleru_files/contract.png"></a>z</a>
+    <script src="script.js"></script>
+    <ul id="uli">
+      <li><a href="#up" rel="noopener noreferrer" onclick="hide()">Home</a></li>
+      <li><a href="#gallery" rel="noopener noreferrer" onclick="hide()">Gallery</a></li>
+      <li><a href="#reviews" rel="noopener noreferrer" onclick="hide()">Reviews</a></li>
+      <li><a href="#htr" rel="noopener noreferrer" onclick="hide()">How to Reach</a></li>
+      <li><a href="#about" rel="noopener noreferrer" onclick="hide()">About</a></li>
+    </ul>
+  </nav>
   
 
-}
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+  <div class="home">Nestled in a valley in the midst of pine forests, the lake is an excellent site for activities like
+    fishing, angling and boating. Himachal Pradesh Tourism department has built a boat house adjacent to the lake which
+    has facilities for water sports like river rafting, motor boating, canoeing, and kayaking. Other than the water
+    sport activities, pedal boats and rowing boats are also available for the tourists.
+    The Chamera Hydel Electric Project, one of the main hydel projects of Himachal Pradesh, is situated nearby.
+    Chamera Lake, though located in the midst of dense forests, is well connected by roads making it easy to reach the
+    place.
+    Other tourist spots near Chamera Lake include the Bhandal Valley and the Bhalei temple</div>
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
+  <a id="upu" href="#up"><img src="Up.png" alt="" srcset=""></a>
+  <hr id="gallery">
+  <h1>Gallery</h1>
+  <div class="slideshow-container">
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-  display: none;
-}
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 10</div>
+      <img src="1.JPG" style="width:100%; height:100%;">
+      <div class="text">Caption Text</div>
+    </div>
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-  display: none;
-}
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 10</div>
+      <img src="2.JPG" style="width:100%; height:100%;">
+      <div class="text">Caption Two</div>
+    </div>
 
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 10</div>
+      <img src="3.JPG" style="width:100%; height:100%;">
+      <div class="text">Caption Three</div>
+    </div>
 
-.active {
-  background-color: #717171;
-}
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 10</div>
+      <img src="4.JPG" style="width:100%; height:100%;">
+      <div class="text">Caption Three</div>
+    </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 10</div>
+    <img src="5.JPG" style="width:100%; height:100%;">
+    <div class="text">Caption Three</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 10</div>
+    <img src="6.JPG" style="width:100%; height:100%;">
+    <div class="text">Caption Three</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">7 / 10</div>
+    <img src="7.JPG" style="width:100%; height:100%;">
+    <div class="text">Caption Three</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">8 / 10</div>
+    <img src="8.JPG" style="width:100%; height:100%;">
+    <div class="text">Caption Three</div>
+  </div>
+ 
+  <div class="mySlides fade">
+    <div class="numbertext">9 / 10</div>
+    <img src="9.JPG" style="width:100%; height:100%;">
+    <div class="text">Caption Three</div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">10 / 10</div>
+    <img src="10.JPG" style="width:100%; height:100%;">
+    <div class="text">Caption Three</div>
+  </div>
+  </div>
+  <br>
 
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
 
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-    </style>
-</head>
-<body>
-    <header id="up" > 
-        <!-- <img src="tfg.png" width="100%" alt="" srcset=""> -->
-        <h1>Taleru Boating Point
-        </h1>
-    </header>
-
-    <nav id="navg">
-      <a id ="shownav" onclick="show()" style="font-size: 35px; text-align:center;"><b class="navcnd">&triangledown;</b><b class="navcnd">&triangle;</b></a>
-      <script> 
-      var snav=document.getElementById("shownav");
-      var navcon=document.getElementsByClassName("navcnd");
-      
-      
-      var io=0;
-      navcon[1].style.display="none";
-      
-      function show(){
-        if(io==0)
-        {
-        var uli=document.getElementById("uli");
-        var navg=document.getElementById("navg");
-        navcon[1].style.display="inline";
-        navcon[0].style.display="none";
-        
-        // uli.style.display="inline-block";
-        navg.style.animationName="expand";
-        navg.style.animationPlayState="running";
-        navg.style.width="200px";
-        navg.style.height="300px";
-        // navg.style.width="90%";
-        // navg.style.height="90%";
-        
-        // snav.style.position="fixed";
-        // snav.style.verticalAlign="top";
-        // snav.style.text-align="left";
-        uli.style.display="inline-block";
-        io=1;
-      }
-      else if(io==1)
-        {
-        var uli=document.getElementById("uli");
-        var navg=document.getElementById("navg");
-        navcon[0].style.display="inline";
-        navcon[1].style.display="none";
-        navg.style.animationName="contract";
-        navg.style.animationPlayState="running";
-        uli.style.display="none";
-        // uli.style.display="inline-block";
-        navg.style.width="50px";
-        navg.style.height="50px";
-        // snav.style.position="static";
-        // snav.style.verticalAlign="middle";
-        io=0;
-      }
-      }
-
-      </script>
-        <ul id="uli">
-            <li><a href="#up" rel="noopener noreferrer" onclick="hide()">Home</a></li>
-            <li><a href="#gallery" rel="noopener noreferrer" onclick="hide()">Gallery</a></li>
-            <li><a href="#reviews"  rel="noopener noreferrer" onclick="hide()">Reviews</a></li>
-            <li><a href="#htr" rel="noopener noreferrer" onclick="hide()">How to Reach</a></li>
-            <li><a href="#about"  rel="noopener noreferrer" onclick="hide()">About</a></li>
-        </ul>
-    </nav>
-    <script> 
-      var snav=document.getElementById("shownav");
-      var navcon=document.getElementsByClassName("navcnd");
-      
-      
-      var io=0;
-      
-      function hide(){
-        io=0;
-        var uli=document.getElementById("uli");
-        var navg=document.getElementById("navg");
-        navcon[0].style.display="inline";
-        navcon[1].style.display="none";
-        navg.style.animationName="contract";
-        navg.style.animationPlayState="running";
-        uli.style.display="none";
-        // uli.style.display="inline-block";
-        navg.style.width="50px";
-        navg.style.height="50px";
-        // snav.style.position="static";
-        // snav.style.verticalAlign="middle";
-        
-        
-      }  
-    </script>
+  <script src="script2.js">
     
-    <div class="home">Nestled in a valley in the midst of pine forests, the lake is an excellent site for activities like fishing, angling and boating. Himachal Pradesh Tourism department has built a boat house adjacent to the lake which has facilities for water sports like river rafting, motor boating, canoeing, and kayaking. Other than the water sport activities, pedal boats and rowing boats are also available for the tourists.
-        The Chamera Hydel Electric Project, one of the main hydel projects of Himachal Pradesh, is situated nearby.
-        Chamera Lake, though located in the midst of dense forests, is well connected by roads making it easy to reach the place.
-        Other tourist spots near Chamera Lake include the Bhandal Valley and the Bhalei temple</div>
-
-        <a id="upu" href="#up"><img src="Up.png" alt="" srcset=""></a>
-    <hr  id="gallery">
-    <h1>Gallery</h1>
-    <div class="slideshow-container">
-
-        <div class="mySlides fade">
-          <div class="numbertext">1 / 10</div>
-          <img src="1.JPG" style="width:100%; height:100%;">
-          <div class="text">Caption Text</div>
-        </div>
-        
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 10</div>
-          <img src="2.JPG" style="width:100%; height:100%;">
-          <div class="text">Caption Two</div>
-        </div>
-        
-        <div class="mySlides fade">
-          <div class="numbertext">3 / 10</div>
-          <img src="3.JPG" style="width:100%; height:100%;">
-          <div class="text">Caption Three</div>
-        </div>
-        
-        <div class="mySlides fade">
-            <div class="numbertext">4 / 10</div>
-            <img src="4.JPG" style="width:100%; height:100%;">
-            <div class="text">Caption Three</div>
-          </div>
-        </div>
-	<div class="mySlides fade">
-            <div class="numbertext">5 / 10</div>
-            <img src="5.JPG" style="width:100%; height:100%;">
-            <div class="text">Caption Three</div>
-          </div>
-        </div>
-	<div class="mySlides fade">
-            <div class="numbertext">6 / 10</div>
-            <img src="6.JPG" style="width:100%; height:100%;">
-            <div class="text">Caption Three</div>
-          </div>
-        </div>
-<div class="mySlides fade">
-            <div class="numbertext">7 / 10</div>
-            <img src="7.JPG" style="width:100%; height:100%;">
-            <div class="text">Caption Three</div>
-          </div>
-        </div>
-<div class="mySlides fade">
-            <div class="numbertext">8 / 10</div>
-            <img src="8.JPG" style="width:100%; height:100%;">
-            <div class="text">Caption Three</div>
-          </div>
-        </div>
-<div class="mySlides fade">
-            <div class="numbertext">9 / 10</div>
-            <img src="9.JPG" style="width:100%; height:100%;">
-            <div class="text">Caption Three</div>
-          </div>
-        </div>
-<div class="mySlides fade">
-            <div class="numbertext">10 / 10</div>
-            <img src="10.JPG" style="width:100%; height:100%;">
-            <div class="text">Caption Three</div>
-          </div>
-        </div>
-        <br>
-        
-        <div style="text-align:center">
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span>
-	  <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span>
-	  <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span>
-        </div>
-        
-        <script>
-        var slideIndex = 0;
-        showSlides();
-        
-        function showSlides() {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("dot");
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-          }
-          slideIndex++;
-          if (slideIndex > slides.length) {slideIndex = 1}    
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " active";
-          setTimeout(showSlides, 5000); // Change image every 2 seconds
-        }
-        </script>
+  </script>
 
 
-    <i  id="reviews"></i>    
-    <br><hr> <br>
-
-    
-    <h1>Reviews</h1>
-    <center><iframe class="mreviews" src="mreview.html" background="white"></iframe></center>
-    
-    <i  id="htr"></i>    
-    <br><hr> <br>
-
-    
-    <h1>How to Reach</h1>
-    <p><strong>Chamera Lake</strong> is located very close to <strong>Dalhousie</strong>, and can be reached pretty easily. The <strong>distance between Chamera Lake and Dalhousie</strong> is nearly 37 kms, which can be covered within an hour or so via car. There are currently no buses that take you to Chamera Lake from <strong>Dalhousie</strong>, but local transport such as jeeps and vans are easily available. Their schedule is not fixed though, so make sure to plan accordingly. The roads are well paved and well maintained, so getting here won’t be a problem at all. It is one of the most popular attractions here, so make sure to spend some time here. There are also several hotels nearby, so if you want to spend the night nearby it won’t be a problem.</p>
-    
-<center><table>
-  <tr>
-    <th>      </th>
-    <th>By Air	</th> 
-    <th>By Road		</th>
-	<th>By Train</th>
-	<th>By Sea</th>
-  </tr>
-  <tr>
-    <td>Pune to Dalhousie</td>
-    <td>-</td> 
-    <td>33.0 hours</td>
-	<td>-</td>
-	<td>-</td>
-  </tr>
-  <tr>
-    <td>Mumbai to Dalhousie</td>
-    <td>-</td> 
-    <td>-</td>
-	<td>-</td>
-	<td>-</td>
-  </tr>
-  <tr>
-    <td>Kolkata to Dalhousie</td>
-    <td>-</td> 
-    <td>34.0 hours</td>
-	<td>-</td>
-	<td>-</td>
-  </tr>
-  <tr>
-    <td>New Delhi to Dalhousie</td>
-    <td>-</td> 
-    <td>10.0 hours</td>
-	<td>-</td>
-	<td>-</td>
-  </tr>
-  <tr>
-    <td>Bangalore to Dalhousie</td>
-    <td>-</td> 
-    <td>43.0 hours</td>
-	<td>-</td>
-	<td>-</td>
-  </tr>
-</table></center>
-<i  id="about"></i>    
-<br><hr> <br>
+  <i id="reviews"></i>
+  <br>
+  <hr> <br>
 
 
-<h1>About</h1>   
-    <center>
-        <font color="black" size="5px" style="padding: 50px;">It is located at an altitude of 763m from the surface of the sea. In Chamba District, the Chamera Lake is developed by Chamera Dam on the Ravi River at Chourah. You can easily access the site from Chamba – Pathankot highway. Water Sports activities are easily available at Chamera Lake. Chamera Lake, a scenic bulging of Chamba District, is 25-35 km from the popular hill resort of Dalhousie. An artificial lake, it is the collection of Chamera Hydroelectric Project that is built over the Ravi River.
-        Chamera Dam is connecting by the road goes along the Lake to Bhalei Temple and the famous thick dense forests of Bhandal valley. A water sports sub-center has set up by the Himachal Pradesh Department of Tourism near the lake to promote the water sports activity at the lake. The lake also provides abundant opportunities for boating and fishing. The Dam site enjoys very sharp changeability in climate between April to June.During the day it can get very hot (around 35°c) though by the evening, temperatures fall to between 18 to 20°c. Between the month of July and September the area received concentrated to heavy rainfall and temperatures vary down 20 to 26°c during the day and 8 to 12°c at night.
-        The project area enjoys a maximum temperature of approx.15°c between October and December and sometimes the temperature are known to fall below freezing point. Chamera Lake offers irrigation facilities to the many villages that are expanded in and around Chamera Lake. For these villagers this lake is a source of subsistence with its natural water reserves. This lake is situated between grassy pine forests and lustrous or glazed valleys. If you want to visit Chamba or Dalhousie, make sure to visit this spectacular lake. Water sports of varied kind are also practiced here, through which your skill sharpens at river rafting or simply slow off with still water sports on the Chamera Lake.
-        </font>
-        </center>
-        <br> <br> <br>
-        <p style="background-color:#000000; color:#f0f0f0; border:10px; border-style:solid; border-color:#FF0000; padding: 1em;"><marquee>The Chamera Lake, located in Chamba District, is a popular tourist spot of Himachal Pradesh. Located at a distance of 25 km from Dalhousie, at an altitude of 1700 m, Chamera Lake is a reservoir formed by the Chamera Dam. Being a major source of water supply for the villages surrounding the lake and continuously fed by the Ravi River, the water levels in the lake ranges at an average of 750 m.
-            Nestled in a valley in the midst of pine forests, the lake is an excellent site for activities like fishing, angling and boating. Himachal Pradesh Tourism department has built a boat house adjacent to the lake which has facilities for water sports like river rafting, motor boating, canoeing, and kayaking. Other than the water sport activities, pedal boats and rowing boats are also available for the tourists.
-            The Chamera Hydel Electric Project, one of the main hydel projects of Himachal Pradesh, is situated nearby.
-            Chamera Lake, though located in the midst of dense forests, is well connected by roads making it easy to reach the place.
-            Other tourist spots near Chamera Lake include the Bhandal Valley and the Bhalei temple.........</marquee></p><br>
-            
+  <h1>Reviews</h1>
+  <center><iframe class="mreviews" src="mreview.html" background="white"></iframe></center>
+
+  <i id="htr"></i>
+  <br>
+  <hr> <br>
+
+
+  <h1>How to Reach</h1>
+  <p><strong>Chamera Lake</strong> is located very close to <strong>Dalhousie</strong>, and can be reached pretty
+    easily. The <strong>distance between Chamera Lake and Dalhousie</strong> is nearly 37 kms, which can be covered
+    within an hour or so via car. There are currently no buses that take you to Chamera Lake from
+    <strong>Dalhousie</strong>, but local transport such as jeeps and vans are easily available. Their schedule is not
+    fixed though, so make sure to plan accordingly. The roads are well paved and well maintained, so getting here won’t
+    be a problem at all. It is one of the most popular attractions here, so make sure to spend some time here. There are
+    also several hotels nearby, so if you want to spend the night nearby it won’t be a problem.</p>
+
+  <center>
+    <table>
+      <tr>
+        <th> </th>
+        <th>By Air </th>
+        <th>By Road </th>
+        <th>By Train</th>
+        <th>By Sea</th>
+      </tr>
+      <tr>
+        <td>Pune to Dalhousie</td>
+        <td>-</td>
+        <td>33.0 hours</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Mumbai to Dalhousie</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Kolkata to Dalhousie</td>
+        <td>-</td>
+        <td>34.0 hours</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>New Delhi to Dalhousie</td>
+        <td>-</td>
+        <td>10.0 hours</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>Bangalore to Dalhousie</td>
+        <td>-</td>
+        <td>43.0 hours</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+    </table>
+  </center>
+  <i id="about"></i>
+  <br>
+  <hr> <br>
+
+
+  <h1>About</h1>
+  <center>
+    <font color="black" size="5px" style="padding: 50px;">It is located at an altitude of 763m from the surface of the
+      sea. In Chamba District, the Chamera Lake is developed by Chamera Dam on the Ravi River at Chourah. You can easily
+      access the site from Chamba – Pathankot highway. Water Sports activities are easily available at Chamera Lake.
+      Chamera Lake, a scenic bulging of Chamba District, is 25-35 km from the popular hill resort of Dalhousie. An
+      artificial lake, it is the collection of Chamera Hydroelectric Project that is built over the Ravi River.
+      Chamera Dam is connecting by the road goes along the Lake to Bhalei Temple and the famous thick dense forests of
+      Bhandal valley. A water sports sub-center has set up by the Himachal Pradesh Department of Tourism near the lake
+      to promote the water sports activity at the lake. The lake also provides abundant opportunities for boating and
+      fishing. The Dam site enjoys very sharp changeability in climate between April to June.During the day it can get
+      very hot (around 35°c) though by the evening, temperatures fall to between 18 to 20°c. Between the month of July
+      and September the area received concentrated to heavy rainfall and temperatures vary down 20 to 26°c during the
+      day and 8 to 12°c at night.
+      The project area enjoys a maximum temperature of approx.15°c between October and December and sometimes the
+      temperature are known to fall below freezing point. Chamera Lake offers irrigation facilities to the many villages
+      that are expanded in and around Chamera Lake. For these villagers this lake is a source of subsistence with its
+      natural water reserves. This lake is situated between grassy pine forests and lustrous or glazed valleys. If you
+      want to visit Chamba or Dalhousie, make sure to visit this spectacular lake. Water sports of varied kind are also
+      practiced here, through which your skill sharpens at river rafting or simply slow off with still water sports on
+      the Chamera Lake.
+    </font>
+  </center>
+  <br> <br> <br>
+  <p
+    style="background-color:#000000; color:#f0f0f0; border:10px; border-style:solid; border-color:#FF0000; padding: 1em;">
+    <marquee>The Chamera Lake, located in Chamba District, is a popular tourist spot of Himachal Pradesh. Located at a
+      distance of 25 km from Dalhousie, at an altitude of 1700 m, Chamera Lake is a reservoir formed by the Chamera Dam.
+      Being a major source of water supply for the villages surrounding the lake and continuously fed by the Ravi River,
+      the water levels in the lake ranges at an average of 750 m.
+      Nestled in a valley in the midst of pine forests, the lake is an excellent site for activities like fishing,
+      angling and boating. Himachal Pradesh Tourism department has built a boat house adjacent to the lake which has
+      facilities for water sports like river rafting, motor boating, canoeing, and kayaking. Other than the water sport
+      activities, pedal boats and rowing boats are also available for the tourists.
+      The Chamera Hydel Electric Project, one of the main hydel projects of Himachal Pradesh, is situated nearby.
+      Chamera Lake, though located in the midst of dense forests, is well connected by roads making it easy to reach the
+      place.
+      Other tourist spots near Chamera Lake include the Bhandal Valley and the Bhalei temple.........</marquee>
+  </p><br>
+
 </body>
+
 </html>
